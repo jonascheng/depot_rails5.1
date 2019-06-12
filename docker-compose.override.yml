@@ -10,3 +10,7 @@ services:
       - "./:/usr/src/app"
     ports:
       - 8000:3000
+
+  mysql:
+    environment:
+      - MYSQL_DATABASE=depot_development

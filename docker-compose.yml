@@ -9,13 +9,13 @@ services:
     restart: always
     command: "rails server -b 0.0.0.0"
 
-  postgres:
-    image: postgres:10-alpine
+  mysql:
+    image: mysql:8
     environment:
-      - POSTGRES_USER=depot
-      - POSTGRES_PASSWORD=
-      - POSTGRES_DB=depot
-      - PGDATA=/var/lib/postgresql/data/pgdata
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=depot
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=depot
     restart: always
 
   redis:

@@ -22,7 +22,7 @@ FROM base as dev
 
 # for development only, feel free to remove in release
 RUN apt-get install -y --no-install-recommends \
-    postgresql-client
+    mysql-client
 
 ########################################
 # release stage
