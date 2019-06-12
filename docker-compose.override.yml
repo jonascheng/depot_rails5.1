@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  depot:
+    build:
+      context: .
+      target: dev
+    image: local/depot
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - 8000:3000

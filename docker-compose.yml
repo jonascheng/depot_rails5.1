@@ -1,0 +1,23 @@
+version: '2.3'
+
+services:
+  depot:
+    build:
+      context: .
+      target: release
+    image: local/depot
+    restart: always
+    command: "rails server -b 0.0.0.0"
+
+  postgres:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_USER=depot
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=depot
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    restart: always
+
+  redis:
+    image: redis:4-alpine
+    restart: always
